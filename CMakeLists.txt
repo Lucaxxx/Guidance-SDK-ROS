@@ -8,7 +8,7 @@ find_package(catkin REQUIRED COMPONENTS
   sensor_msgs
   geometry_msgs
 )
-find_package(OpenCV 2 REQUIRED core highgui)
+find_package(OpenCV 3 REQUIRED core highgui)
 
 catkin_package(
 )
@@ -47,6 +47,10 @@ link_libraries(
 
 add_executable(guidanceNode
   src/GuidanceNode.cpp
+  src/DJI_utility.cpp)
+
+add_executable(guidanceServer
+  src/GuidanceServer.cpp
   src/DJI_utility.cpp)
 
 add_executable(guidanceNodeTest
